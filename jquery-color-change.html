@@ -1,0 +1,24 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+$(function(){
+    var colors = ["red", "green", "blue", "yellow", "purple", "black"];
+    $('#btn-change').on('click', function() {
+        var randomizeColorIndex = Math.floor(Math.random() * colors.length);
+        console.log(randomizeColorIndex, colors[randomizeColorIndex]);
+        $('.states').attr('style', 'color: ' + colors[randomizeColorIndex] + ';');
+    });
+});
+</script>
+  
+<ul class="states">
+	<li>New South Wales</li>
+	<li>Victoria</li>
+	<li>South Australia</li>
+	<li>Queensland</li>
+	<li>Western Australia</li>
+	<li>Tasmania</li>
+	<li>Northan Territory</li>
+	<li>ACT</li>
+</ul>
+  
+<button id="btn-change">Click me</button>
