@@ -3,6 +3,7 @@ require_once("database.php");
 
 $data = [];
 
+// query for getting the projects and it purchase/clients count
 $projectsCount = "SELECT projects.name, IFNULL(projects_count, 0) AS count
 FROM projects
 LEFT JOIN (

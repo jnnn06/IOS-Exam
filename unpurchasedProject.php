@@ -3,6 +3,7 @@ require_once("database.php");
 
 $data = [];
 
+// unpurchased products query
 $unpurchasedProjects = "SELECT *
 FROM projects
 WHERE id NOT IN (
@@ -26,7 +27,7 @@ $unpurchasedProjectsResult = $mysqli->query($unpurchasedProjects);
     <h1>Unpurchased Projects</h1>
 
     <ul>
-    <?php while ($project = $unpurchasedProjectsResult->fetch_assoc()) : ?>
+        <?php while ($project = $unpurchasedProjectsResult->fetch_assoc()) : ?>
             <li><?= $project["name"] ?></li>
         <?php endwhile; ?>
     </ul>
